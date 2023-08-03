@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-class CRUD(BaseModel):
+class Create(BaseModel):
     id: int
     item: str
     
