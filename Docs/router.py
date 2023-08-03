@@ -4,13 +4,20 @@ from typing import Union
 
 router = APIRouter()
 
-items_db = [1,2,3,4]
+items_db = {}
 
 @router.get("/items")
-async def read_item(skip: Union[int,None] = None, item: Union[str,None] = None):
-    tmp = {"items_db": items_db}
-    print(skip,item)
-    if skip:tmp.update({'skip':skip})
-    if item:tmp.update({'item':item})
-    print(tmp)
-    return tmp
+async def read_items():
+    return items_db
+
+@router.post("/items/")
+async def read_item(items: Item):
+    items_db.update(items)
+    return {
+        "message": f"{items.item}'s item has been added."
+        }
+
+# @router.get("/items/{item_id}")
+# async def read():
+
+#     return

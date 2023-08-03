@@ -5,3 +5,5 @@ Accept : 내가 받고 싶은 데이터 형식
 
 GET -> request header(Path Parameter, Query Parameter)  
 POST -> request body  
+
+RESTful API  
