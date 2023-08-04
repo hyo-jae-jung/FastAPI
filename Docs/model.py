@@ -8,3 +8,7 @@ class Create(BaseModel):
 class Item(BaseModel):
     item_id: int
     item: Union[str,None]
+    
+class Item2(BaseModel):
+    item: str
+    
