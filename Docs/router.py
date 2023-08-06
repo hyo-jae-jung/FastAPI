@@ -9,13 +9,15 @@ items_db = []
 
 @router.get("/items")
 async def read_items(request: Request):
-    print(request['path'],request.method,request.url,request.url.path,request.url.port,request.url.scheme,sep='\n')
     return items_db
 
 @router.post("/items/", response_model = Item2, status_code=201)
-async def add_item(items: Item):
+async def add_item(request: Request, items: Item):
     items_db.append(items)
-    return items
+    return templates.TemplateResponse("items.html",{
+    "request":request,
+    "items": items
+    })
 
 @router.get("/items/{item_id}")
 async def read_item(item_id:int):
