@@ -4,8 +4,22 @@
     <title>Items</title>
 </head>
 <body>
-    <h1>{{ request }}</h1>
-    <h1>{{ items.item_id }}</h1>
-    <h1>{{ items.item }}</h1>
+
+    <h1>{{ request }}</h1> 
+    <h4>{{ items }}</h4>
+    <h1>{% for item in items %}</h1>
+        <b>{{ item.item_id }}, {{ item.item }}, {{ loop.index }}, {{ loop.revindex0 }}</b>
+    <h1>{% endfor %}</h1>
+
+    <form action="/items/" method="get">
+        <label for="item_id">item:</label>
+        <input type="text" id="item_id" name="item_id" required><br><br>
+        <label for="item">item:</label>
+        <input type="text" id="item" name="item" required><br><br>
+        <input type="submit" value="전송">
+        <button name="to post">transfer</button>
+        
+    </form>
+
 </body>
 </html>
