@@ -7,6 +7,7 @@ items_db = []
 
 @crud_test_router.get("/items")
 async def items():
+    print(items_db)
     return items_db
 
 @crud_test_router.post("/items")

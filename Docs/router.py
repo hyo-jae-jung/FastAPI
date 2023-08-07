@@ -11,7 +11,7 @@ items_db = []
 @router.get("/items/")
 async def read_items(request: Request, item_id:int=0, item: Union[str,None] = None):
     if item_id:
-        items_db.append({"item_id":item_id,"item":item})
+        items_db.append(Item(**{"item_id":item_id,"item":item}))
     return templates.TemplateResponse("items.html",{
     "request":request,
     "items": items_db
