@@ -9,3 +9,8 @@ POST -> request body
 pydantic은 dict를 class로 변환해줄 수 있다.  
 
 RESTful API  
+
+Depends  
+
+Body  
+
