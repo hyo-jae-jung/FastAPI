@@ -14,3 +14,4 @@ Depends
 
 Body  
 
+mkdir -p [디렉토리 주소]  
