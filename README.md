@@ -14,6 +14,6 @@ Depends
 
 Body  
 
-mkdir -p [디렉토리 주소]  
+mkdir -p [디렉토리 주소]  : hide a directory.  
 
-cat /etc/issue  
+cat /etc/issue : check an ubuntu version.  
