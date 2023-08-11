@@ -14,3 +14,4 @@ Depends
 
 Body  
 
+cat /etc/issue  
