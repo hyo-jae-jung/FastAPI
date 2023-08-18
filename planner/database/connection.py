@@ -8,11 +8,11 @@ from models.events import Event
 class Settings(BaseSettings):
     
     DATABASE_URL: Optional[str] = None 
-    DaTABASE_NAME: Optional[str] = "mydatabase"
+    DATABASE_NAME: Optional[str] = "mydatabase"
     
     async def initialize_database(self):
         client = AsyncIOMotorClient(self.DATABASE_URL)
-        await init_beanie(database=client[self.DaTABASE_NAME],
+        await init_beanie(database=client[self.DATABASE_NAME],
                           document_models=[Event,User])
         
     class Config:
