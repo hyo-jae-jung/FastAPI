@@ -23,6 +23,11 @@ cat /etc/issue : check an ubuntu version.
 몽고DB 사용 여부 확인  
 ps aux | grep mongod  
 
+service mongod start   = systemctl start mongod  
+service mongod stop    = systemctl stop mongod  
+service mongod status  = systemctl status mongod  
+
+
 exitCode:100 is a directory location error  
 
 몽고DB admin 실행  

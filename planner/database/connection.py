@@ -6,7 +6,7 @@ from models.users import User
 from models.events import Event
 
 class Settings(BaseSettings):
-    
+    SECRET_KEY: Optional[str] = None
     DATABASE_URL: Optional[str] = None 
     DATABASE_NAME: Optional[str] = "mydatabase"
     
