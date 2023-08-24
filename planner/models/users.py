@@ -1,13 +1,10 @@
-from typing import Optional, List
-from beanie import Document, Link
+from beanie import Document
 from pydantic import BaseModel, EmailStr
-from models.events import Event
 
 
 class User(Document):
     email: EmailStr
     password: str
-    events: Optional[List[Event]]
     
     class Settings:
         name = "users"
@@ -16,15 +13,14 @@ class User(Document):
         schema_extra = {
             "example": {
                 "email": "fastapi@packt.com",
-                "password": "strong!!!",
-                "events":[]
+                "password": "strong!!!"
             }
         }
 
 
-class UserSignIn(BaseModel):
-    email: EmailStr
-    password: str
+class TokenResponse(BaseModel):
+    access_token: str
+    token_type: str
     
 
 if __name__ == "__main__":
