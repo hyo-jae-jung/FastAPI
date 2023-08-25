@@ -1,20 +1,32 @@
 HTTP[HyperText Transfer Protocol]  
 문자 그래도 통신 규약인데 하이퍼텍스트로 서버와 클라이언트간 메시지 교환 규칙이다.  
 
-Content-Type : 내가 보낼 데이터 형식  
-Accept : 내가 받고 싶은 데이터 형식  
+HTTP는 Header와 Body로 나눠진다  
 
-GET -> request header, Path Parameter, Query Parameter  
-POST -> request body  
+    Header는 HTTP 요청의 메타데이터와 제어 정보가 들어간다. curl에서 -H로 입력되는 데이터  
+        -H accept : 내가 받고 싶은 데이터 형식  
+        -H Content-Type : 내가 보낼 데이터 형식  
+        -H Authorization  
 
+    Body는 실제 데이터가 들어간다. curl에서 -d로 입력되는 데이터  
+        -d {}
+
+    데이터 형식 종류
+        application/json  
+        application/x-www-form-urlencoded  
+        mutipart/form-data  
+
+***
 
 [RESTful API]  
 HTTP를 지원하는 프로그램 언어.  
 성능 향상이 목적이 아니라 일관적 컨벤션, API 이해도 및 호환성 상승이 목적  
 
 ***
+
 mkdir -p [디렉토리 주소]  : hide a directory.  
 cat /etc/issue : check an ubuntu version.  
+
 ***
 
 [MongoDB]  
