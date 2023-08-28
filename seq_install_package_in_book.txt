@@ -7,3 +7,5 @@ beanie==1.13.1
 pydantic[dotenv]  
 passlib[bcrypt]  
 python-jose[cryptography] python-multipart  
+
+pytest  

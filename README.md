@@ -60,3 +60,5 @@ CRUD 명령어 검색 ㄱㄱ
 클라이언트는 발급된 토큰으로 다양한 데이터 요청  
 서버는 토큰 확인 후 요청 데이터 전송  
 
+origin =  protocol(http, https) + domain(myapp.com, localhost, localhost.tiangolo.com) + port(80,443,8080)  
+
