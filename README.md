@@ -66,3 +66,5 @@ origin =  protocol(http, https) + domain(myapp.com, localhost, localhost.tiangol
 
 await는 코루틴 안에서 다른 코루틴을 실행 할 때 사용  
 https://nomad-programmer.tistory.com/468  
+https://ks1171-park.tistory.com/81  
+https://toramko.tistory.com/entry/python-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%ED%85%8C%EC%8A%A4%ED%8A%B8unit-test-%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-pytest-%EC%99%80-fixture  
