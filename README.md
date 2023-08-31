@@ -63,3 +63,5 @@ CRUD 명령어 검색 ㄱㄱ
 origin =  protocol(http, https) + domain(myapp.com, localhost, localhost.tiangolo.com) + port(80,443,8080)  
 
 서피스 환경설정 완료
+
+await는 코루틴 안에서 다른 코루틴을 실행 할 때 사용  
