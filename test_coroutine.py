@@ -1,19 +1,28 @@
 import asyncio
-import time
- 
-async def add(a, b):
-    print('add: {0} + {1}'.format(a, b))
-    await asyncio.sleep(1.0)    # 1초 대기. asyncio.sleep도 네이티브 코루틴
-    return a + b    # 두 수를 더한 결과 반환
- 
-async def print_add(a, b):
-    result = await add(a, b)    # await로 다른 네이티브 코루틴 실행하고 반환값을 변수에 저장
-    result2 = await add(b, a)    # await로 다른 네이티브 코루틴 실행하고 반환값을 변수에 저장
-    print('print_add: {0} + {1} = {2}'.format(a, b, result))
-    print('print_add: {0} + {1} = {2}'.format(b, a, result2))
- 
-loop = asyncio.get_event_loop()             # 이벤트 루프를 얻음
+import time 
+
+async def coroutine_1():
+    print("Coroutine 1 is running")
+    await asyncio.sleep(2)
+    print("Coroutine 1 is done")
+
+async def coroutine_2():
+    print("Coroutine 2 is running")
+    await asyncio.sleep(1)
+    print("Coroutine 2 is done")
+
+async def main():
+    print("Main coroutine is running")
+    task1 = asyncio.create_task(coroutine_1())
+    task2 = asyncio.create_task(coroutine_2())
+    
+    await task1
+    await task2
+    
+    print("Main coroutine is done")
+
 start = time.time()
-loop.run_until_complete(print_add(1, 2))    # print_add가 끝날 때까지 이벤트 루프를 실행
+loop = asyncio.get_event_loop()
+loop.run_until_complete(main())
+loop.close()
 print(time.time() - start)
-loop.close()                                # 이벤트 루프를 닫음

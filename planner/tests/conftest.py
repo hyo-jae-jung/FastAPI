@@ -18,7 +18,8 @@ def event_loop():
 
 async def init_db():
     test_settings = Settings()
-    test_settings.DATABASE_URL = "mongodb://localhost:27017/testdb"
+    # test_settings.DATABASE_URL = "mongodb://localhost:27017/testdb"
+    test_settings.DATABASE_NAME = "testdb"
 
     await test_settings.initialize_database()
 

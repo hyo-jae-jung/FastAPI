@@ -8,7 +8,7 @@ from models.events import Event
 class Settings(BaseSettings):
     SECRET_KEY: Optional[str] = None
     DATABASE_URL: Optional[str] = None 
-    DATABASE_NAME: Optional[str] = "mydatabase2"
+    DATABASE_NAME: Optional[str] = "mydatabase"
     
     async def initialize_database(self):
         client = AsyncIOMotorClient(self.DATABASE_URL)

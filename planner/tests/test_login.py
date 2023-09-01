@@ -3,7 +3,7 @@ import pytest
 
 
 @pytest.mark.asyncio
-async def test_sign_new_user(default_client: httpx.AsyncClient) -> None:
+async def test_sign_new_user(default_client: httpx.AsyncClient,event_loop) -> None:
     payload = {
         "email": "testuser@packt.com",
         "password": "testpassword",
@@ -24,7 +24,7 @@ async def test_sign_new_user(default_client: httpx.AsyncClient) -> None:
     assert response.json() == test_response
     
 @pytest.mark.asyncio
-async def test_sign_user_in(default_client: httpx.AsyncClient) -> None:
+async def test_sign_user_in(default_client: httpx.AsyncClient,event_loop) -> None:
     payload = {
         "username": "testuser@packt.com",
         "password": "testpassword"
