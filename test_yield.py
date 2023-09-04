@@ -12,10 +12,11 @@
 # task.send(20)
 
 def test_yield():
-    while True:
-        y = yield 1
-        if y == 10:
-            break
-        
-task = test_yield()
-i = next(task)
+    yield 1
+    yield 2
+    yield 3
+
+
+a = test_yield()
+while True:
+    print(next(a))

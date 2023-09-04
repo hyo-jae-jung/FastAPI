@@ -1,7 +1,9 @@
 import httpx
 import pytest
 
-
+"""
+conftest.py안 pytest.fixture의 함수 이름과 같아야 함. 다르면 오류 -> default_client
+"""
 @pytest.mark.asyncio
 async def test_sign_new_user(default_client: httpx.AsyncClient,event_loop) -> None:
     payload = {
