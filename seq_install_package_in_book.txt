@@ -1,0 +1,12 @@
+fastapi  
+uvicorn  
+*** pydantic==1.10.12 ***  
+jinja2 python-multipart  
+pydantic[email]  
+beanie==1.13.1  
+pydantic[dotenv]  
+passlib[bcrypt]  
+python-jose[cryptography] python-multipart  
+
+pytest  
+httpx pytest-asyncio
