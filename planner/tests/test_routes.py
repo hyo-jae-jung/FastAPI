@@ -106,7 +106,7 @@ async def test_update_event(default_client: httpx.AsyncClient, mock_event: Event
 @pytest.mark.asyncio
 async def test_delete_event(default_client: httpx.AsyncClient, mock_event: Event, access_token: str) -> None:
     test_response = {
-        "message": "Event deleted successfully."
+        "message": "Event deleted successfully"
     }
 
     headers = {
@@ -117,7 +117,6 @@ async def test_delete_event(default_client: httpx.AsyncClient, mock_event: Event
     url = f"/event/{mock_event.id}"
 
     response = await default_client.delete(url, headers=headers)
-
     assert response.status_code == 200
     assert response.json() == test_response
 
@@ -128,4 +127,6 @@ async def test_get_event_again(default_client: httpx.AsyncClient, mock_event: Ev
     response = await default_client.get(url)
 
     assert response.status_code == 404
+    assert response.json()["creator"] == mock_event.creator
+    assert response.json()["_id"] == str(mock_event.id)
     

@@ -8,7 +8,7 @@ from main import app
 from models.events import Event
 from models.users import User
 
-# 비동기 처리를 워한 코드
+# 비동기 처리를 위한 코드
 @pytest.fixture(scope="session")
 def event_loop():
     loop = asyncio.get_event_loop()
