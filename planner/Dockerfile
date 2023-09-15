@@ -1,13 +1,13 @@
 FROM python:3.10
 
-WORKDIR /app
+WORKDIR /planner
 
-ADD requirements.txt /app/requirements.txt
+ADD requirements.txt /planner/requirements.txt
 
-RUN pip install --upgrade pip && pip install -r /app/requirements.txt
+RUN pip install --upgrade pip && pip install -r /planner/requirements.txt
 
 EXPOSE 8080
 
-COPY ./ /app
+COPY ./ /planner
 
 CMD ["python", "main.py"]
