@@ -67,3 +67,6 @@ origin =  protocol(http, https) + domain(myapp.com, localhost, localhost.tiangol
 await는 코루틴 안에서 다른 코루틴을 실행 할 때 사용  
 
 httpx ㄱㄱ  
+
+[FastAPI를 사용한 파이썬 웹 개발]학습 완료.. 숙련도를 위해 2회차를 시작하자.  
+
