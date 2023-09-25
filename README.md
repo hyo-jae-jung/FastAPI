@@ -1,5 +1,5 @@
 HTTP[HyperText Transfer Protocol]  
-문자 그래도 통신 규약인데 하이퍼텍스트로 서버와 클라이언트간 메시지 교환 규칙이다.  
+문자 통신 규약인데 하이퍼텍스트로 서버와 클라이언트간 메시지 교환 규칙이다.  
 
 HTTP는 Header와 Body로 나눠진다  
 
@@ -61,8 +61,6 @@ CRUD 명령어 검색 ㄱㄱ
 서버는 토큰 확인 후 요청 데이터 전송  
 
 origin =  protocol(http, https) + domain(myapp.com, localhost, localhost.tiangolo.com) + port(80,443,8080)  
-
-서피스 환경설정 완료
 
 await는 코루틴 안에서 다른 코루틴을 실행 할 때 사용  
 

@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Path, Body
+from fastapi import APIRouter, Path, Body, HTTPException,status
 from model import Todo, Todos, Item
 from typing import Annotated
 
@@ -6,20 +6,18 @@ todo_router = APIRouter()
 
 todo_list = []
 
-@todo_router.post("/todo")
-async def add_todo(todo: Annotated[
-                    Todo,
-                    Body(
-                        examples=[
-                            {
-                               "id":1,
-                                "item":{
-                                        "item":"Example Schema!",
-                                        "status":"example status!"
-                                        }
+@todo_router.post("/todo",status_code=201)
+async def add_todo(todo:Annotated[Todo,Body(
+    examples=[
+        {
+                            "id":1,
+                            "item":{
+                                "item":"example item1111",
+                                "status":"example status1111"
                             }
-                        ]
-                    )]) -> dict:
+                        }
+    ]
+)]) -> dict:
     todo_list.append(todo)
     return {
         "message":"Todo added successfully."
@@ -38,10 +36,10 @@ async def get_single_todo(todo_id: int = Path(...,title="The ID of todo to retri
             return {
                 "todo": todo
             }
-    return {
-        "1":[todo.id,todo_id],
-        "message": "Todo with supplied ID dosen't exist."
-    }
+    raise HTTPException(
+        status_code=status.HTTP_404_NOT_FOUND,
+        detail="Todo with supplied doesn't exist.",
+    )
 
 @todo_router.put("/todo/{todo_id}")
 async def update_todo(todo_data:Annotated[
@@ -62,10 +60,10 @@ async def update_todo(todo_data:Annotated[
             return {
                 "messsage":"Todo updated successfully."
             }
-    return {
-        "1":[todo.id,todo_id,todo.item.item,todo_data.item,todo.item.status,todo_data.status],
-        "message":"Todo with supplied ID doesn't exist."
-    }
+    raise HTTPException(
+        status_code=status.HTTP_404_NOT_FOUND,
+        detail="Todo with supplied doesn't exist.",
+    )
 
 @todo_router.delete("/todo/{todo_id}")
 async def delete_single_todo(todo_id:int) -> dict:
@@ -76,9 +74,10 @@ async def delete_single_todo(todo_id:int) -> dict:
             return {
                 "message":"Todo deleted successfully."
             }
-    return {
-        "message":"Todo with supplied doesn't exist."
-    }
+    raise HTTPException(
+        status_code=status.HTTP_404_NOT_FOUND,
+        detail="Todo with supplied doesn't exist.",
+    )
 
 @todo_router.delete("/todo")
 async def delete_all_todo() -> dict:
