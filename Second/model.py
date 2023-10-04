@@ -13,7 +13,7 @@ class Todo(BaseModel):
             "example":{
                             "id":1,
                             "item":{
-                                "item":"example item",
+                                "item":"example itemggg",
                                 "status":"example status"
                             }
                         }
@@ -28,7 +28,7 @@ class Todos(BaseModel):
                             {
                                 "id":1,
                                 "item":{
-                                    "item":"example item",
+                                    "item":"example itemsssssssss",
                                     "status":"example status"
                                 }
                             }

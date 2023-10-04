@@ -7,17 +7,18 @@ todo_router = APIRouter()
 todo_list = []
 
 @todo_router.post("/todo",status_code=201)
-async def add_todo(todo:Annotated[Todo,Body(
-    examples=[
-        {
-                            "id":1,
-                            "item":{
-                                "item":"example item1111",
-                                "status":"example status1111"
-                            }
-                        }
-    ]
-)]) -> dict:
+# async def add_todo(todo:Annotated[Todo,Body(
+#     examples=[
+#         {
+#                             "id":1,
+#                             "item":{
+#                                 "item":"example item1111",
+#                                 "status":"example status1111"
+#                             }
+#                         }
+#     ]
+# )]) -> dict:
+async def add_todo(todo:Todo)->dict:
     todo_list.append(todo)
     return {
         "message":"Todo added successfully."
