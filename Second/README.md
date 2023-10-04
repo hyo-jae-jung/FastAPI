@@ -22,3 +22,9 @@ fastapi의 Body클래스를 사용해서 라우터함수의 인자에 example sc
 
 라우터함수의 인자에 추가하면 기존 example schema를 덮어씌운다.
 ***
+
+docker image build --tag [이미지이름] [주소 : 이미지 빌드 전 빌드할 위치로 이동 후 ., 아니면 주소입력]  
+docker run -d -p 8000:8000 --name [컨테이너이름] [이미지이름]  
+docker exec -it [컨테이너이름] /bin/sh  
+docker container stop [컨테이너이름]  
+docker container start [컨테이너이름]  
