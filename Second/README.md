@@ -28,3 +28,9 @@ docker run -d -p 8000:8000 --name [컨테이너이름] [이미지이름]
 docker exec -it [컨테이너이름] /bin/sh  
 docker container stop [컨테이너이름]  
 docker container start [컨테이너이름]  
+
+[response_model]  
+함수의 return으로 출력되는 output의 형식을 제한한다.  
+다양한 경우를 테스트 하니 자연스럽게 typing 라이브러리가 숙지된다.  
+책에서는 응답모델 설명 후 오류처리가 나오는데 오류처리를 먼저 해야 응답모델 설정을 깔끔하게 할 수 있을 것 같다.  
+

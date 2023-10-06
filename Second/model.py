@@ -1,9 +1,18 @@
 from pydantic import BaseModel 
-from typing import List
+from typing import List, Union
 
 class Item(BaseModel):
     item: str
-    status: str
+    status: Union[str,None]
+    class Config:
+        schema_extra={
+            "example":{
+                "todo":{
+                    "item":"itemitem",
+                    "status":"statusstatus"
+                }
+            }
+        }
 
 class Todo(BaseModel):
     id: int
