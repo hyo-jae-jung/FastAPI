@@ -23,6 +23,10 @@ HTTP를 지원하는 프로그램 언어.
 성능 향상이 목적이 아니라 일관적 컨벤션, API 이해도 및 호환성 상승이 목적  
 
 ***
+Request에는 method,url,header,body가 들어있다.  
+https://www.starlette.io/requests/ 참고하기  
+
+***
 
 mkdir -p [디렉토리 주소]  : hide a directory.  
 cat /etc/issue : check an ubuntu version.  

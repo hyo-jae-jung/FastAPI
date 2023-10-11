@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Path, HTTPException, status, Request
+from fastapi import APIRouter, Path, HTTPException, status, Request,Form
 from model import Item, Item2
 from fastapi.templating import Jinja2Templates
 from typing import Union
@@ -7,6 +7,7 @@ router = APIRouter()
 templates = Jinja2Templates(directory="templates/")
 
 items_db = []
+names_db = []
 
 @router.get("/items/")
 async def read_items(request: Request, item_id:int=0, item: Union[str,None] = None):
@@ -14,16 +15,26 @@ async def read_items(request: Request, item_id:int=0, item: Union[str,None] = No
         items_db.append(Item(**{"item_id":item_id,"item":item}))
     return templates.TemplateResponse("items.html",{
     "request":request,
-    "items": items_db
+    "items": items_db,
+    "names": names_db
     })
 
-@router.post("/items/", response_model = Item2, status_code=201)
-async def add_item(request: Request, items: Item):
-    items_db.append(items)
+@router.post("/items/")
+async def post_name(request: Request, name: str = Form(...)):
+    names_db.append(name)
     return templates.TemplateResponse("items.html",{
-    "request":request,
-    "items": items
+        "request":request,
+        "items":items_db,
+        "names":names_db
     })
+
+# @router.post("/items/", status_code=201)
+# async def add_item(request: Request, items: Item):
+#     items_db.append(items)
+#     return templates.TemplateResponse("items.html",{
+#     "request":request,
+#     "items": items
+#     })
 
 @router.get("/items/{item_id}")
 async def read_item(item_id:int):

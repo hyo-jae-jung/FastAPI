@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Todo</title>
+        {% extends "home.html" %}
+        {% block body %}
+        {{super()}}
+        {% endblock %}
+    </head>
+    <body>
+        {% block content %}
+        {% for todo in todos %}
+        <h3>{{ todo.id, todo.item.item, todo.item.status | default('이것은 기본 todo 입니다') }}</h3>
+        {% endfor %}
+        {% endblock %}
+    </body>
+</html>
