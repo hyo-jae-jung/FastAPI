@@ -16,7 +16,6 @@ async def read_items(request: Request, item_id:int=0, item: Union[str,None] = No
     return templates.TemplateResponse("items.html",{
     "request":request,
     "items": items_db,
-    "names": names_db
     })
 
 @router.post("/items/")

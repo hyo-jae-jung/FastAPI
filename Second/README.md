@@ -38,3 +38,7 @@ docker container start [컨테이너이름]
 python with문과 같이 사용됨. 의존성 정리하고 도커에 커밋하기. 로그인 실습 시 자세히 정리하기  
 
 
+[APIRouter]  
+tags 인자는 라우터를 카테고리화 시키거나 문서화 하는데 도움을 준다.(스웨거)  
+
+
