@@ -7,6 +7,12 @@ user_router = APIRouter(
 
 users = {}
 
+@user_router.get("/users")
+async def userss() -> dict:
+    return {
+        "users":users
+    }
+
 @user_router.post("/signup")
 async def sign_new_user(data: User) -> dict:
     if data.email in users:
