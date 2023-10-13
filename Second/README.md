@@ -44,3 +44,5 @@ tags 인자는 라우터를 카테고리화 시키거나 문서화 하는데 도
 
 변수명과 함수명을 똑같이 하면 문제생김. 신경쓰기  
 
+on_event : https://velog.io/@alirz-pixel/fastapi-onevent-7hjlco8g
+
