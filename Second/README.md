@@ -46,3 +46,5 @@ tags 인자는 라우터를 카테고리화 시키거나 문서화 하는데 도
 
 git push origin +main : 원격저장소에 강제 push  
 
+ODM(object document mapper) -> python beanie
+ORM(object rerational mapper) -> python sqlalchemy
